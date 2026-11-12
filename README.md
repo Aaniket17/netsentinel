@@ -67,6 +67,26 @@ andom_state=42) trained on an 80/20 stratified split.
 
 ---
 
+
+### Model Benchmarking Comparison (44,253 Test Flows)
+
+To evaluate the trade-off between detection accuracy and real-time inference latency, the Random Forest baseline was benchmarked against a regularized **Logistic Regression** classifier:
+
+| Model Architecture | Accuracy | F1-Score | ROC-AUC | Batch Inference Time |
+| :--- | :--- | :--- | :--- | :--- |
+| **Random Forest (Baseline)** | **99.97%** | **0.9998** | **1.0000** | 131.6 ms |
+| **Logistic Regression (Linear)** | 99.86% | 0.9988 | 0.9999 | **7.1 ms** |
+
+- **Key Takeaway:** Random Forest delivers near-zero false positives for high-security offline/batch auditing, while Logistic Regression offers **~18.5x faster inference** (7.1 ms), making it ideal for ultra-low-latency edge filtering.
+
+### Visual Evaluation Reports
+
+| Confusion Matrix (Random Forest) | ROC Curve Comparison |
+| :---: | :---: |
+| ![Confusion Matrix](reports/rf_confusion_matrix.png) | ![ROC Comparison](reports/roc_comparison.png) |
+
+---
+
 ## Explainable AI (XAI) Findings
 
 Using both **Gini Impurity reduction** and **SHAP (SHapley Additive exPlanations)** with TreeExplainer, model predictions were audited to verify that decisions rely on real attack signatures rather than dataset leakage:
