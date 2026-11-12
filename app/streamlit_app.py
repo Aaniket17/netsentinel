@@ -7,7 +7,15 @@ import os
 # Set page configuration
 st.set_page_config(page_title="NetSentinel | Anomaly Detection", layout="wide")
 
+
+
+
+
 st.title("NetSentinel: Network Anomaly Detection System")
+
+
+
+
 st.markdown("Real-time network traffic flow inspection and bulk PCAP/CSV anomaly scanning.")
 
 # Load trained baseline model
