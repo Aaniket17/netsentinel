@@ -146,3 +146,9 @@ Run the Streamlit application locally:
 streamlit run app/streamlit_app.py
 `
 Open your browser at http://localhost:8501 to access the interface.
+
+## Live Network Traffic Capture (scan.py)
+To test real-time traffic directly from a local network interface:
+1. Install Npcap and run pip install scapy.
+2. Run python scan.py to capture live flow features.
+3. Paste the extracted values into the Single Flow Inspector tab.
