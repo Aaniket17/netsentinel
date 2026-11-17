@@ -155,3 +155,14 @@ To test real-time traffic directly from a local network interface:
 1. Install Npcap and run pip install scapy.
 2. Run python scan.py to capture live flow features.
 3. Paste the extracted values into the Single Flow Inspector tab.
+
+---
+
+## Multi-Class System Upgrade (8-Class Production Release)
+
+The framework has been upgraded from binary DDoS classification to an **8-class multi-attack detection system** (`models/baseline_rf.joblib`) evaluated across **77 network flow features**:
+
+- **Supported Attack Categories:** `Benign`, `Botnet`, `Bruteforce`, `DDoS`, `DoS`, `Infiltration`, `Portscan`, and `WebAttacks`.
+- **Single Flow Inspector with Presets:** Select any of the 8 traffic categories from the preset dropdown for instant testing without external files, or enter custom flow parameters manually with full per-class probability breakdowns.
+- **Multi-Attack Batch Scanner:** Bulk CSV scanning (`sample_traffic.csv`) with category distribution charts and downloadable scan reports.
+- **Automated Training Pipeline (`train.py`):** Parallelized multi-class Random Forest training (`n_jobs=-1`) across multi-day CIC-IDS2017 datasets.
