@@ -122,6 +122,9 @@ netsentinel/
 
 ## Quickstart & Installation
 
+1. Live Web Demo (No Setup Required)
+Access the deployed application directly at https://netsentinel-ai.streamlit.app/.
+
 ### 1. Prerequisites
 - Python 3.10+
 - Git
