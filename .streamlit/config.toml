@@ -1,6 +1,2 @@
-[server]
-headless = false
-address = "localhost"
-
-[browser]
-serverAddress = "localhost"
+[theme]
+base = "light"
